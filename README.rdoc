@@ -3,7 +3,10 @@
 * For rails >= 3.0.0 (but < 3.2.0) and mongoid >= 2.0.0, use version 0.0.14
 
 == SYNOPSIS
-* Data migrations for Mongoid.
+* Data migrations for Mongoid. This fork modifies namespacing in an effort to allow sane migrations for when both Mongoid and ActiveRecord are used in the same application.
+
+== NOTES
+* In this fork, Mongoid migrations will go to db/migrate/mongoid and ActiveRecord migrations will remain in db/migrate/
 
 == MIGRATE WHEN ...
 * The migrating is good
@@ -16,16 +19,16 @@
 == FEATURES AND HOW TO USE
 * generator:
   * rails generate mongoid:migration your_migration_name_here
-
+  
 * migrations:
-  * db:migrate
-  * db:migrate:down
-  * db:migrate:up
-  * db:rollback
-  * db:migrate:redo
-  * db:migrate:reset
-  * db:reseed (handled by mongoid)
-  * db:version
+  * mongoid:migrate
+  * mongoid:migrate:down
+  * mongoid:migrate:up
+  * mongoid:rollback
+  * mongoid:migrate:redo
+  * mongoid:migrate:reset
+  * mongoid:reseed (handled by mongoid)
+  * mongoid:version
 
 == CREDITS TO
   * rails
